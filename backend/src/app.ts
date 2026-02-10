@@ -1,5 +1,7 @@
 import express, { Application } from "express";
 import { IndexRoutes } from "./app/routes";
+import { notFound } from "./app/middleware/notFound";
+import { globalErrorHandler } from "./app/middleware/globalErroHandler";
 
 const app: Application = express();
 
@@ -15,5 +17,8 @@ app.use("/api/v1", IndexRoutes);
 app.get("/", (req, res) => {
     res.send("Welcome to HealthX BACKEND!");
 });
+
+app.use(globalErrorHandler)
+app.use(notFound)
 
 export default app;
