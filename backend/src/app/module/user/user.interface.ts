@@ -21,12 +21,12 @@ export interface ICreateDoctorPayload {
 }
 
 
-
 export interface ICreateAdminPayload {
-    password: string;
+  password: string;
+  admin: {
     name: string;
     email: string;
     profilePhoto?: string;
-    contactNumber?: string;
-    address?: string;
+    contactNumber: string;
+  };
 }
