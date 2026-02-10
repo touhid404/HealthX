@@ -4,12 +4,9 @@ import AppError from "../../errorHelpers/AppError";
 import { auth } from "../../lib/auth";
 import { prisma } from "../../lib/prisma";
 import { tokenUtils } from "../../utils/token";
+import { ILoginUserPayload, IRegisterPatientPayload } from "../../interfaces/auth.interface";
 
-interface IRegisterPatientPayload {
-    name: string;
-    email: string;
-    password: string;
-}
+
 
 const registerPatient = async (payload: IRegisterPatientPayload) => {
     const { name, email, password } = payload;
@@ -84,10 +81,6 @@ const registerPatient = async (payload: IRegisterPatientPayload) => {
 
 }
 
-interface ILoginUserPayload {
-    email: string;
-    password: string;
-}
 
 const loginUser = async (payload: ILoginUserPayload) => {
     const { email, password } = payload;

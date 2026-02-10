@@ -20,7 +20,7 @@ export const globalErrorHandler = (err: any, req: Request, res: Response, next: 
     let message: string = 'Internal Server Error';
     let stack: string | undefined = undefined;
 
-    //Zod Error Patttern
+    //Zod Error Pattern
     /*
      error.issues; 
     /* [
