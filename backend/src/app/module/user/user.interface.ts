@@ -19,3 +19,14 @@ export interface ICreateDoctorPayload {
     }
     specialties: string[];
 }
+
+
+
+export interface ICreateAdminPayload {
+    password: string;
+    name: string;
+    email: string;
+    profilePhoto?: string;
+    contactNumber?: string;
+    address?: string;
+}
