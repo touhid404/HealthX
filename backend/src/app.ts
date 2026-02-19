@@ -36,10 +36,9 @@ app.use(express.urlencoded({ extended: true }));
 // Middleware to parse JSON bodies
 app.use(express.json());
 app.use(cookieParser())
-
 cron.schedule("*/25 * * * *", async () => {
     try {
-        console.log(`Running cron job to cancel unpaid appointments...${new Date().toISOString()}`);
+        console.log(`Running cron job to cancel unpaid appointments...${new Date().toLocaleTimeString()}`);
         await AppointmentService.cancelUnpaidAppointments();
     } catch (error : any) {
         console.error("Error occurred while canceling unpaid appointments:", error.message);    
