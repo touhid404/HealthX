@@ -40,8 +40,8 @@ cron.schedule("*/25 * * * *", async () => {
     try {
         console.log(`Running cron job to cancel unpaid appointments...${new Date().toLocaleTimeString()}`);
         await AppointmentService.cancelUnpaidAppointments();
-    } catch (error : any) {
-        console.error("Error occurred while canceling unpaid appointments:", error.message);    
+    } catch (error: any) {
+        console.error("Error occurred while canceling unpaid appointments:", error.message);
     }
 })
 app.use("/api/v1", IndexRoutes);
