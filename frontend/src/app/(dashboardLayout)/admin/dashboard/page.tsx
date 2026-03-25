@@ -21,7 +21,7 @@ const AdminDashboardPage = async () => {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-        <AdminDashboardContent/>
+      <AdminDashboardContent />
     </HydrationBoundary>
   )
 }

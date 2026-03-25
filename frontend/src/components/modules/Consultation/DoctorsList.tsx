@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 const DoctorsList = () => {
   const { data: doctorData } = useQuery({
     queryKey: ["doctors"],
-    queryFn: () => getDoctors(),
+    queryFn: () => getDoctors("limit=5&page=1"),
   });
 
   //non-prefetched query example
